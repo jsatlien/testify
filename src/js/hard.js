@@ -5,22 +5,31 @@ class GildedRose {
     this.quality = quality;
   }
 
-  tick () {
-    if ( this.name === 'normal') {
-      if (this. sellIn < 0) {
-        this.sellIn = this.sellIn -1;
-        this.quality = this.quality -2;
-      }
+  tick() {
+    addType(this);
 
-      else {
-      this.sellIn = this.sellIn - 1;
-      this.quality = this.quality -1;
-      }
+    if (this.type = 'aged') {
+
+    } else if (this.type = 'conjured') {
+
+    } else if (this.type = 'legendary') {
+
+    } else {
+      // this.type = 'normal'
     }
   }
 }
 
-
-
+function addType(item) {
+  if (item.name.includes('normal')) {
+    this.type = 'normal';
+  } else if (item.name.includes('conjured')) {
+    this.type = 'conjured';
+  } else if (item.name.includes('Sulfuras')) {
+    this.type = 'legendary';
+  } else if (item.name.includes('Aged') || item.name.includes('Backstage')) {
+    item.type = 'aged';
+  }
+}
 
 export { GildedRose };
