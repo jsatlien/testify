@@ -11,6 +11,9 @@ function fizz (num) {
 };
 
 function fizzBuzz (start, end) {
+  for (var i = start; i <= end; i++) {
+    console.log(fizz(i));
+  };
 };
 
 export { fizz };
