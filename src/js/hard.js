@@ -6,10 +6,18 @@ class GildedRose {
   }
 
   tick () {
-    this.sellIn = this.sellIn - 1;
-    this.quality = this.quality -1;
-  }
+    if ( this.name === 'normal') {
+      if (this. sellIn < 0) {
+        this.sellIn = this.sellIn -1;
+        this.quality = this.quality -2;
+      }
 
+      else {
+      this.sellIn = this.sellIn - 1;
+      this.quality = this.quality -1;
+      }
+    }
+  }
 }
 
 
