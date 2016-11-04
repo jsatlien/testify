@@ -1,5 +1,6 @@
+function addType(item) {
 
-
+};
 
 
 class GildedRose {
@@ -7,42 +8,44 @@ class GildedRose {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
+      if (this.name.includes('Aged Brie')) {
+          this.type = 'aged';
+      } else if ( this.name.includes('Backstage')) {
+          this.type = 'aged';
+      } else if (this.name.includes('Conjured')) {
+          this.type = 'conjured';
+      } else if (this.name.includes('Sulfuras')) {
+          this.type = 'legendary';
+      } else {
+          this.type = 'normal';
+    };
   }
 
-  addType() {
-   if (item.name.includes('normal')) {
-     this.type = 'normal';
-   } else if (item.name.includes('conjured')) {
-     this.type = 'conjured';
-   } else if (item.name.includes('Sulfuras')) {
-     this.type = 'legendary';
-   } else if (item.name.includes('Aged') || item.name.includes('Backstage')) {
-     item.type = 'aged';
-   }
-  }
+
   tick() {
-    this.addType();
+    // addType(this);
 
-    if (this.type = 'aged') {
-
-    } else if (this.type = 'conjured') {
-
-    } else if (this.type = 'legendary') {
-
+    if (this.type === 'aged') {
+        console.log('aged')
+    } else if (this.type === 'conjured') {
+        console.log('conjured')
+    } else if (this.type === 'legendary') {
+        console.log('legendary')
     } else {
         this.tickNormal()// this.type = 'normal'
     }
-  }
+  };
   tickNormal() {
-    this.sellIn--
+    this.sellIn--;
     if (this.quality < 0) {
       this.quality = 0;
-    } else if (this.sellIn >= 0) {
+    }
+    if (this.sellIn >= 0) {
       this.quality--
     } else {
       this.quality = this.quality - 2
     }
-  }
+  };
 }
 
 
