@@ -6,16 +6,15 @@ class GildedRose {
       if (this.name.includes('Aged Brie')) {
           this.type = 'aged';
       } else if ( this.name.includes('Backstage')) {
-          this.type = 'aged';
+          this.type = 'concert';
       } else if (this.name.includes('Conjured')) {
           this.type = 'conjured';
       } else if (this.name.includes('Sulfuras')) {
           this.type = 'legendary';
       } else {
           this.type = 'normal';
-    };
-  }
-
+      }
+  };
 
   tick() {
     // addType(this);
@@ -41,7 +40,11 @@ class GildedRose {
       this.quality = 0;
     }
   };
-}
+  tickAged() {
+    this.sellIn--;
+    if
+  }
+};
 
 
 
