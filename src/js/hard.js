@@ -3,17 +3,17 @@ class GildedRose {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
-    if (this.name.includes('Aged')) {
-        this.type = 'aged';
-    } else if ( this.name.includes('Backstage')) {
-        this.type = 'ticket';
-    } else if (this.name.includes('Conjured')) {
-        this.type = 'conjured';
-    } else if (this.name.includes('Sulfuras')) {
-        this.type = 'legendary';
-    } else {
-        this.type = 'normal';
-    };
+      if (this.name.includes('Aged')) {
+          this.type = 'aged';
+      } else if ( this.name.includes('Backstage')) {
+          this.type = 'ticket';
+      } else if (this.name.includes('Conjured')) {
+          this.type = 'conjured';
+      } else if (this.name.includes('Sulfuras')) {
+          this.type = 'legendary';
+      } else {
+          this.type = 'normal';
+      };
   };
 
   tick() {
