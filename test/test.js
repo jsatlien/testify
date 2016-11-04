@@ -9,25 +9,25 @@ const expect = chai.expect;
 const should = chai.should();
 const assert = chai.assert;
 
-// describe('Fizzbuzz returns values for different kinds of numbers', function () {
-//   it('should return the number for "basic" numbers', function () {
-//     let result = fizz(4);
-//     assert.equal(result, 4);
-//   });
-//   it('should return "fizz" for numbers that are divisible by 3', function () {
-//     let result = fizz(6);
-//     assert.equal(result, "fizz");
-//   });
-//   it('should return "buzz" for numbers that are divisible by 5', function () {
-//     let result = fizz(10);
-//     assert.equal(result, "buzz");
-//   });
-//   it('should return "fizzbuzz" for numbers that are divisible by 3 and 5', function () {
-//     let result = fizz(15);
-//     assert.equal(result, "fizzbuzz");
-//   });
-//
-// });
+describe('Fizzbuzz returns values for different kinds of numbers', function () {
+  it('should return the number for "basic" numbers', function () {
+    let result = fizz(4);
+    assert.equal(result, 4);
+  });
+  it('should return "fizz" for numbers that are divisible by 3', function () {
+    let result = fizz(6);
+    assert.equal(result, "fizz");
+  });
+  it('should return "buzz" for numbers that are divisible by 5', function () {
+    let result = fizz(10);
+    assert.equal(result, "buzz");
+  });
+  it('should return "fizzbuzz" for numbers that are divisible by 3 and 5', function () {
+    let result = fizz(15);
+    assert.equal(result, "fizzbuzz");
+  });
+
+});
 
 // UNCOMMENT THE SECTION BELOW FOR HARD MODE
 
