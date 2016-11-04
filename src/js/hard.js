@@ -22,7 +22,7 @@ class GildedRose {
     if (this.type === 'aged') {
         this.tickAged();
     } else if (this.type === 'conjured') {
-        console.log('conjured')
+        this.tickConjured()
     } else if (this.type === 'legendary') {
         console.log('legendary')
     } else if (this.type === 'ticket') {
@@ -65,13 +65,19 @@ class GildedRose {
     if (this.quality > 50 ) {
         this.quality = 50;
     }
-    // } else if (this.sellIn <= 10 && this.sellIn > 5) {
-    //     this.quality = this.quality + 2;
-    // } else if (this.sellIn <=5 && this.sellIn > 0) {
-    //     this.quality = this.quality + 3;
-    // } else {
-    //     this.quality = 0;
-    // }
+  };
+  tickConjured() {
+    this.sellIn--;
+    if (this.sellIn <= 0) {
+        this.quality = this.quality - 4;
+    } else if (this.sellIn > 0) {
+        this.quality = this.quality - 2;
+    } else {
+        this.quality = this.quality;
+    }
+    if (this.quality < 0) {
+      this.quality = 0;
+    }
   };
 };
 
