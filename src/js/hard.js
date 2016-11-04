@@ -1,8 +1,3 @@
-function addType(item) {
-
-};
-
-
 class GildedRose {
   constructor (sellIn, quality, name) {
     this.name = name;
@@ -37,13 +32,13 @@ class GildedRose {
   };
   tickNormal() {
     this.sellIn--;
-    if (this.quality < 0) {
-      this.quality = 0;
-    }
-    if (this.sellIn >= 0) {
+    if (this.sellIn > 0) {
       this.quality--
     } else {
       this.quality = this.quality - 2
+    }
+    if (this.quality < 0) {
+      this.quality = 0;
     }
   };
 }
