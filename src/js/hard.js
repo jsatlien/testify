@@ -6,7 +6,7 @@ class GildedRose {
       if (this.name.includes('Aged Brie')) {
           this.type = 'aged';
       } else if ( this.name.includes('Backstage')) {
-          this.type = 'concert';
+          this.type = 'ticket';
       } else if (this.name.includes('Conjured')) {
           this.type = 'conjured';
       } else if (this.name.includes('Sulfuras')) {
@@ -20,11 +20,13 @@ class GildedRose {
     // addType(this);
 
     if (this.type === 'aged') {
-        console.log('aged')
+        this.tickAged()
     } else if (this.type === 'conjured') {
         console.log('conjured')
     } else if (this.type === 'legendary') {
         console.log('legendary')
+    } else if (this.type === 'ticket') {
+        console.log('Rock on dude!')
     } else {
         this.tickNormal()// this.type = 'normal'
     }
@@ -42,7 +44,13 @@ class GildedRose {
   };
   tickAged() {
     this.sellIn--;
-    if
+    this.quality++;
+    if (this.sellIn < 0) {
+      this.quality++;
+    }
+    if (this.quality > 50) {
+      this.quality = 50;
+    }
   }
 };
 
