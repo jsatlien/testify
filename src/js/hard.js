@@ -3,7 +3,7 @@ class GildedRose {
     this.name = name;
     this.sellIn = sellIn;
     this.quality = quality;
-      if (this.name.includes('Aged Brie')) {
+      if (this.name.includes('Aged')) {
           this.type = 'aged';
       } else if ( this.name.includes('Backstage')) {
           this.type = 'ticket';
@@ -13,34 +13,32 @@ class GildedRose {
           this.type = 'legendary';
       } else {
           this.type = 'normal';
-      }
+      };
   };
 
   tick() {
-    // addType(this);
-
     if (this.type === 'aged') {
         this.tickAged();
     } else if (this.type === 'conjured') {
-        this.tickConjured()
+        this.tickConjured();
     } else if (this.type === 'legendary') {
-        console.log('legendary')
+        this.quality = this.quality;
     } else if (this.type === 'ticket') {
         this.tickTicket();
     } else {
-        this.tickNormal();// this.type = 'normal'
-    }
+        this.tickNormal();
+    };
   };
   tickNormal() {
     this.sellIn--;
     if (this.sellIn > 0) {
-      this.quality--
+      this.quality--;
     } else {
-      this.quality = this.quality - 2
-    }
+      this.quality = this.quality - 2;
+    };
     if (this.quality < 0) {
       this.quality = 0;
-    }
+    };
   };
   tickAged() {
     this.sellIn--;
@@ -48,10 +46,10 @@ class GildedRose {
     if (this.sellIn < 0) {
       this.quality++;
       // ask brit or ben why it was necessary to include this if statement to make the tests pass.
-    }
+    };
     if (this.quality > 50) {
       this.quality = 50;
-    }
+    };
   };
   tickTicket() {
     this.sellIn--;
@@ -64,7 +62,7 @@ class GildedRose {
     } else { this.quality++}
     if (this.quality > 50 ) {
         this.quality = 50;
-    }
+    };
   };
   tickConjured() {
     this.sellIn--;
@@ -74,10 +72,10 @@ class GildedRose {
         this.quality = this.quality - 2;
     } else {
         this.quality = this.quality;
-    }
+    };
     if (this.quality < 0) {
       this.quality = 0;
-    }
+    };
   };
 };
 
