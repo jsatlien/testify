@@ -45,6 +45,9 @@ class GildedRose {
     if (this.sellIn < 0) {
       this.quality++;
       // ask brit or ben why it was necessary to include this if statement to make the tests pass.
+      // Maybe the fact that sellIn is negative, and like brit's example in class,
+      // the if-statement is added to the 'this.quality' for a cumulative
+      // effect of 'this.quality += 2'.
     };
     if (this.quality > 50) {
       this.quality = 50;
