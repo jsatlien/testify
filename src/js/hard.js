@@ -15,6 +15,7 @@ class GildedRose {
           this.type = 'normal';
       };
   };
+  
   tick() {
     if (this.type === 'aged') {
         this.tickAged();
@@ -28,31 +29,18 @@ class GildedRose {
         this.tickNormal();
     };
   };
-  tickNormal() {
-    this.sellIn--;
-    if (this.sellIn > 0) {
-      this.quality--;
-    } else {
-      this.quality -= 2;
-    };
-    if (this.quality < 0) {
-      this.quality = 0;
-    };
-  };
+
   tickAged() {
     this.sellIn--;
     this.quality++;
     if (this.sellIn < 0) {
       this.quality++;
-      // ask brit or ben why it was necessary to include this if statement to make the tests pass.
-      // Maybe the fact that sellIn is negative, and like brit's example in class,
-      // the if-statement is added to the 'this.quality' for a cumulative
-      // effect of 'this.quality += 2'.
     };
     if (this.quality > 50) {
       this.quality = 50;
     };
   };
+
   tickTicket() {
     this.sellIn--;
     if (this.sellIn < 0) {
@@ -66,6 +54,7 @@ class GildedRose {
         this.quality = 50;
     };
   };
+
   tickConjured() {
     this.sellIn--;
     if (this.sellIn <= 0) {
@@ -79,6 +68,19 @@ class GildedRose {
       this.quality = 0;
     };
   };
+
+  tickNormal() {
+    this.sellIn--;
+    if (this.sellIn > 0) {
+      this.quality--;
+    } else {
+      this.quality -= 2;
+    };
+    if (this.quality < 0) {
+      this.quality = 0;
+    };
+  };
+
 };
 
 
